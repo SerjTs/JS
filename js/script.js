@@ -88,9 +88,20 @@ proisvedenie = proisv (x, y);
 alert ("Произведение " + x + " и " + y + " =  " + proisvedenie);
 
 function delen(x, y)
+
 {
 return(x / y);
 } 
 delenie = delen (x, y);
 alert ("Деление " + x + " на " + y + " =  " + delenie);
+
+
+function power(val, pow) {
+    if (pow != 1) {
+        return val * power (val, pow-1);
+    }else{
+        return val;
+    }
+}
+alert("2 в 4 степени = " + power(2,4));
 
