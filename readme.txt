@@ -113,7 +113,41 @@ switch(a){
 Задача 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
 Обязательно использовать оператор return.
 
+Ответ:
+let x = 10, y = 5;
+function sum(x, y)
+{
+return(x + y);
+} 
+summa = sum (x, y);
+alert ("Сумма " + x + " и " + y + " =  " + summa);
 
+function rasn(x, y)
+{
+return(x - y);
+} 
+rasnost = rasn (x, y);
+alert ("Разность " + x + " и " + y + " =  " + rasnost);
+
+function proisv(x, y)
+{
+return(x * y);
+} 
+proisvedenie = proisv (x, y);
+alert ("Произведение " + x + " и " + y + " =  " + proisvedenie);
+
+function delen(x, y)
+{
+return(x / y);
+} 
+delenie = delen (x, y);
+alert ("Деление " + x + " на " + y + " =  " + delenie);
+
+
+Задача 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+где arg1, arg2 - значения аргументов, operation - строка с названием операции. В зависимости от
+переданного значения операции выполнить одну из арифметических операций (использовать функции из
+пункта 3) и вернуть полученное значение (использовать switch).
 
 Задача 7*. Сравнить null и 0. Попробуйте объяснить результат.
 

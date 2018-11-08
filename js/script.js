@@ -64,3 +64,33 @@ switch(a){
 
 alert (null === 0); //false
 alert (null == 0); //false
+
+let x = 10, y = 5;
+function sum(x, y)
+{
+return(x + y);
+} 
+summa = sum (x, y);
+alert ("Сумма " + x + " и " + y + " =  " + summa);
+
+function rasn(x, y)
+{
+return(x - y);
+} 
+rasnost = rasn (x, y);
+alert ("Разность " + x + " и " + y + " =  " + rasnost);
+
+function proisv(x, y)
+{
+return(x * y);
+} 
+proisvedenie = proisv (x, y);
+alert ("Произведение " + x + " и " + y + " =  " + proisvedenie);
+
+function delen(x, y)
+{
+return(x / y);
+} 
+delenie = delen (x, y);
+alert ("Деление " + x + " на " + y + " =  " + delenie);
+
