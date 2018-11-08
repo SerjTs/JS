@@ -62,3 +62,5 @@ switch(a){
             alert("Неверное зачение a");
 }
 
+alert (null === 0); //false
+alert (null == 0); //false
