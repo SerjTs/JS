@@ -150,7 +150,25 @@ alert ("Деление " + x + " на " + y + " =  " + delenie);
 пункта 3) и вернуть полученное значение (использовать switch).
 
 Ответ:
-
+function mathOperation(arg1, arg2, operation) {
+    switch(operation) {
+        case "+":
+            alert (arg1+arg2);
+            break;
+        case "-":
+            alert (arg1-arg2);
+            break;
+        case "*":
+            alert (arg1*arg2);
+            break;
+        case "/":
+            alert (arg1/arg2);
+            break;
+        default:
+            alert("Некорректно введенная опция!");
+    }
+}
+mathOperation(2,3,"*")
 
 
 Задача 7*. Сравнить null и 0. Попробуйте объяснить результат.

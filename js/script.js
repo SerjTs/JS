@@ -62,8 +62,6 @@ switch(a){
             alert("Неверное зачение a");
 }
 
-alert (null === 0); //false
-alert (null == 0); //false
 
 let x = 10, y = 5;
 function sum(x, y)
@@ -96,6 +94,32 @@ delenie = delen (x, y);
 alert ("Деление " + x + " на " + y + " =  " + delenie);
 
 
+
+function mathOperation(arg1, arg2, operation) {
+    switch(operation) {
+        case "+":
+            alert (arg1+arg2);
+            break;
+        case "-":
+            alert (arg1-arg2);
+            break;
+        case "*":
+            alert (arg1*arg2);
+            break;
+        case "/":
+            alert (arg1/arg2);
+            break;
+        default:
+            alert("Некорректно введенная опция!");
+    }
+}
+mathOperation(2,3,"/")
+
+
+alert (null === 0); //false
+alert (null == 0); //false
+
+
 function power(val, pow) {
     if (pow != 1) {
         return val * power (val, pow-1);
@@ -104,4 +128,3 @@ function power(val, pow) {
     }
 }
 alert("2 в 4 степени = " + power(2,4));
-
