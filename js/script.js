@@ -61,3 +61,4 @@ switch(a){
         default:
             alert("Неверное зачение a");
 }
+
