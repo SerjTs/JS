@@ -2,10 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Урок 1.</title>
+    <title>Урок 3.</title>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <article class="task-1">
+        <h2>Задача 1.</h2>
+        <p>С помощью цикла while вывести все простые числа в промежутке от 0 до 100</p>
+        <h3>Решение</h3>
+        <div class="code">
+            &nbsp;let i = 0;<br>
+            while (i &lt; 100) {<br>
+            &nbsp; &nbsp; if (isPrimeNumber(i)) {<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(i);<br>
+            &nbsp; &nbsp; }<br>
+            &nbsp; &nbsp; i++;<br>
+            }<br>
+            &nbsp;<br>
+            function isPrimeNumber(number) {<br>
+            &nbsp; &nbsp; for (let i = 2; i &lt; number; i++) {<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; if (number % i == 0) {<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; }<br>
+            &nbsp; &nbsp; }<br>
+            &nbsp; &nbsp; if (number &gt; 1) {<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; return true;<br>
+            &nbsp; &nbsp; }<br>
+            &nbsp; &nbsp; return false;<br>
+            }<br>
+            <button id="btn1">Кнопка 1</button>
+            <button class="btn">
+                <a href = '' onclick = 'demoTask1script(); return false;'>Запустить код</a>
+            </button>
+        </div>    
+    </article>
+    <article class="task-2">
+        <h2>Задача 2.</h2>
+        <p>
+            С помощью цикла do…while написать функцию для вывода чисел от 0 до 10, чтобы результат выглядел так: <br>
+            0 – это ноль <br>
+            1 – нечетное число <br>
+            2 – четное число <br>
+            3 – нечетное число <br>
+            … <br>
+            10 – четное число
+        </p>
+        <h3>Решение</h3>
+        <div class="code">
+            let i = 0;<br>
+            &nbsp;<br>
+            do{<br>
+            &nbsp; &nbsp; number(i);<br>
+            &nbsp; &nbsp; i++;<br>
+            }while (i &lt;= 10);<br>
+            &nbsp;<br>
+            function number (i){<br>
+            &nbsp; &nbsp; if (i === 0) {<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(i + &#39; - это 0&#39;);<br>
+            &nbsp; &nbsp; } else if (i % 2 === 0){<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(i + &#39; - это чётное число&#39;);<br>
+            &nbsp; &nbsp; } else if (i % 2 !== 0){<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; console.log(i + &#39; - это нечётное число&#39;);<br>
+            &nbsp; &nbsp; }<br>
+            }<br>
+            <button class="btn">
+                <a href = '' onclick = 'demoTask2script(); return false;'>Запустить код</a>
+            </button>
+        </div>
+    </article>
+    <article class="task-3">
+        <h2>Задача 3.</h2>
+        <p> Вывести с помощью цикла for числа от 0 до 9, НЕ используя тело цикла. То есть выглядеть должно вот так: <br>
+        for(…)&#123;// здесь пусто&#125;</p>
+        <h3>Решение</h3>
+        <div class="code">
+            for (let i=0; i&lt;10; alert(i++)){};<br>
+        <button class="btn">
+        <a href = '' onclick = 'demoTask3script(); return false;'>Запустить код</a>
+        </button>
+        </div>
+    </article>
+    <article class="task-4">
+        <h2>Задача 4.</h2>
+        <p>
+            Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:<br>
+            x<br>
+            xx<br>
+            xxx<br>
+            xxxx<br>
+            xxxxx<br>
+        </p>
+        <h3>Решение</h3>
+        <div class="code">
+            let string=&#39;&#39;<br>
+            &nbsp;<br>
+            for (let i = 1; i &lt; 21; i++) {<br>
+            &nbsp; &nbsp; string = string + &#39;x&#39;<br>
+            &nbsp; &nbsp; console.log(string);<br>
+            }<br>
+            <button class="btn">
+                <a href = '' onclick = 'demoTask4script(); return false;'>Запустить код</a>
+            </button>
+        </div>
+    </article>
     
 </body>
 </html>
+
