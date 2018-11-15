@@ -1,86 +1,150 @@
-//let btn1 = document.querySelector('#btn1');
-//btn1.addEventListener('click', ()=>{
-//    demoTask3script();
-//});
-
-// Задача 1.
-//
-//let i=0;
-//let prime = "";
-//
-//while (i<100) {
-//    for (let k=2; k<=i; k++) {
-//        if (i % k == 0 && k < i ){
-//            i++;
-//            continue;  
-//        } 
-//        if (i !== k) continue;
-//        prime = prime + k + ', ';
-//    }
-//    i++;
-//}
-//
-//alert(prime.substring(0, prime.length - 2));
+// Задание 1. Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999,
+// мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки
+// и сотни. Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4,
+// ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью
+// console.log и вернуть пустой объект.
 
 
-function demoTask1script(){
-    let i = 0;
-    while (i < 100) {
-        if (isPrimeNumber(i)) {
-            console.log(i);
+let userNumber = '0';
+
+while(true) { 
+    inputNumber();
+
+    if(userNumber >= 0 && userNumber < 1000) {
+        userNumber = userNumber.split('');
+        while(userNumber[2] == undefined) {
+            userNumber.unshift('0');
         }
-        i++;
+        transNumberInTxt(userNumber);
+    } else {
+//        alert('Вы ввели неверное значение');
+//        break;
+        userNumber = '000';
+        transNumberInTxt(userNumber);
     }
 
-    function isPrimeNumber(number) {
-        for (let i = 2; i < number; i++) {
-            if (number % i == 0) {
-                return false;
+    function inputNumber() {
+        userNumber = prompt('Введите число в диапазоне от 0 до 999');
+        return;
+    }
+
+    function transNumberInTxt(){
+        let i = 0;
+        let numberObj = {
+            'сотни': 0,
+            'десятки': 0,
+            'единицы': 0
+        };
+        for (let answer in numberObj){
+            numberObj[answer] = userNumber[i];
+            console.log(answer + ': ' + numberObj[answer]);
+            i++;
+        }
+    }
+}
+
+
+// 2 вариант (без обьекта с выводом результата сразу в лог)
+
+let userNumber = '';
+
+while(true) { 
+    inputNumber();
+
+    if(userNumber >= 0 && userNumber < 1000) {
+        userNumber = userNumber.split('');
+        while(userNumber[2] == undefined) {
+            userNumber.unshift('0');
+        }
+        transNumberInTxt(userNumber);
+    } else {
+        alert('Вы ввели неверное значение');
+        break;
+    }
+
+    function inputNumber() {
+        userNumber = prompt('Введите число в диапазоне от 0 до 999');
+        return;
+    }
+
+    function transNumberInTxt(){
+        let NumberObj = ['сотен', 'десятков', 'единиц'];
+            for(let i = 0; i < userNumber.length; i++) {
+                console.log(NumberObj[i] + ': ' + userNumber[i]);
             }
-        }
-        if (number > 1) {
-            return true;
-        }
-        return false;
     }
 }
 
 
-// Задача 2.
-//
-function demoTask2script(){
-    let i = 0;
 
-    do{
-        number(i);
-        i++;
-    }while (i <= 10);
 
-    function number (i){
-        if (i === 0) {
-            console.log(i + ' - это 0');
-        } else if (i % 2 === 0){
-            console.log(i + ' - это чётное число');
-        } else if (i % 2 !== 0){
-            console.log(i + ' - это нечётное число');
+// Задание 2. Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер
+// задается пользователем)
+
+let levels = [
+	{
+		'1': {
+			lvlText: 'Налево пойдёшь - коня потеряешь, направо пойдёшь - жизнь потеряешь, прямо пойдёшь - жив будешь, да себя позабудешь',
+			answers: {
+                    '1': 'Пойти налево',
+                    '2': 'Пойти направо',
+                    '3': 'Пойти прямо',
+                    '4': 'Выбрать уровень'
+			}
+		}
+	},
+	{
+		'1': {
+			lvlText: 'Вы встретили Соловья-разбойника',
+			answers: {
+                    '1': 'Сразиться с ним',
+                    '2': 'Попробовать обойти',
+                    '4': 'Выбрать уровень'
+			}
+		},
+		'2': {
+			lvlText: 'Вы встретили Змея Горыныча',
+			answers: {
+                    '1': 'Украсть сокровища',
+                    '2': 'Сразиться с ним',
+                    '4': 'Выбрать уровень'
+			}
+		},
+		'3': {
+			lvlText: 'Вы встретили Варвара-красавица',
+			answers: {
+                    '1': 'Жениться на ней',
+                    '4': 'Выбрать уровень'
+			}
+		}
+	}
+];
+let endOfTheGame = false;
+let currentStage = 0;
+let userChoice = '1';
+
+while(!endOfTheGame) {
+	if(currentStage >= 0 && currentStage < levels.length){
+		let choices = '';
+		
+		for(let answer in levels[currentStage][userChoice].answers){
+			choices += answer + ' - ' + levels[currentStage][userChoice].answers[answer] + '\n';
+		}
+
+		userChoice = prompt(levels[currentStage][userChoice].lvlText + '\n' + choices);
+        if(userChoice == '4') {
+            userChoice = prompt('Введите номер уровня (1, 2, 3)');
+		    currentStage = 1;
+        } else {
+		    currentStage++;
         }
-    }
-}
-
-// Задача 3.*
-//
-function demoTask3script(){
-    for (let i=0; i<10; alert(i++)){};
-}
-
-
-// Задача 4.*
-//
-function demoTask4script(){
-    let string=''
-
-    for (let i = 1; i < 21; i++) {
-        string = string + 'x'
-        console.log(string);
-    }
+	} else {
+		if(userChoice == '1') {
+			alert("И жили вы долго и счастливо!");
+			endOfTheGame = true;
+		} else {
+			alert("И сложили вы буйну голову!");
+			endOfTheGame = true;	
+		}			
+	}
 }
