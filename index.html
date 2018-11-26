@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Урок 6.</title>
-	<link rel="stylesheet" href="css/styles.css">
-</head>	
+	<title>Змейка</title>
+
+	<link rel="stylesheet" href="./css/style.css">
+</head>
 <body>
-    <h1>Галерея</h1>
-    <div id="gallery">
-        <img data-image="1" src="./img/small/1.jpg" alt="Маленькая фотография собачки">
-        <img data-image="2" src="./img/small/2.jpg" alt="Маленькая фотография собачки">
-        <img data-image="3" src="./img/small/3.jpg" alt="Маленькая фотография собачки">
-    </div>
-    <div id="big_picture"></div>
-    
-    <div class="buttons">
-        <input type="button" id="btnPrev" value="Назад">
-        <input type="button" id="btnNext" value="Вперёд">
-    </div>
-        
-    <script src="js/script.js"></script>
+    <h1 id="game-score">Счёт игры, очков: 0</h1>
+	<div id="snake-field"></div>
+	<div class="buttons">
+		<div id="snake-start">Старт</div>
+		<div id="snake-renew">Новая игра</div>
+	</div>
+	
+	<script src="./js/script.js"></script>
 </body>
 </html>
